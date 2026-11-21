@@ -2,7 +2,7 @@
 
 Home Assistant-integratie voor Haas+Sohn pelletkachels met de **eigen Haas+Sohn wifimodule** (niet de Fumis WiRCU-module; daarvoor is er de officiële Fumis-integratie). Werkt volledig lokaal via `http://<ip>/status.cgi`, zonder cloud.
 
-Getest met: HSP-6, firmware V6.02, wifimodule V2.2.4.
+Getest met: HSP-6, firmware V6.02, wifimodule V2.2.4. De kachel accepteert alleen hele graden.
 
 ## Installatie
 

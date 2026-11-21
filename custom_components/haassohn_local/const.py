@@ -17,6 +17,6 @@ DEFAULT_OFF_BEHAVIOR = OFF_BEHAVIOR_SETBACK
 
 MIN_TEMP = 10.0
 MAX_TEMP = 30.0
-TEMP_STEP = 0.5
+TEMP_STEP = 1.0  # stove only accepts whole degrees (19.5 is rounded to 20)
 
 SCAN_INTERVAL = timedelta(seconds=30)

@@ -137,6 +137,7 @@ class HaasSohnClimate(HaasSohnEntity, ClimateEntity, RestoreEntity):
     async def async_set_temperature(self, **kwargs: Any) -> None:
         if (temp := kwargs.get(ATTR_TEMPERATURE)) is None:
             return
+        temp = round(float(temp))  # stove only accepts whole degrees
         if temp > self._setback_temp:
             self._comfort = float(temp)
         await self.coordinator.async_send({"sp_temp": number(temp)})
@@ -160,10 +161,10 @@ class HaasSohnClimate(HaasSohnEntity, ClimateEntity, RestoreEntity):
         current = float(self._data.get("sp_temp", 0))
         if current > self._setback_temp:
             self._comfort = current
-        await self.coordinator.async_send({"sp_temp": number(self._setback_temp)})
+        await self.coordinator.async_send({"sp_temp": number(round(self._setback_temp))})
 
     async def _turn_on(self) -> None:
         if not self._data.get("prg"):
             await self.coordinator.async_send({"prg": True})
         if float(self._data.get("sp_temp", 0)) <= self._setback_temp:
-            await self.coordinator.async_send({"sp_temp": number(self._comfort)})
+            await self.coordinator.async_send({"sp_temp": number(round(self._comfort))})
