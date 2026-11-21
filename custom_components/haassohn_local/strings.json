@@ -1,0 +1,60 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Haas+Sohn pellet stove",
+        "description": "Local connection to the Haas+Sohn Wi-Fi module. The IP address and app PIN are shown on the stove under WLAN status.",
+        "data": { "host": "IP address", "pin": "App PIN" }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach the stove at this address.",
+      "invalid_auth": "The stove rejected the PIN."
+    },
+    "abort": { "already_configured": "This stove is already configured." }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Thermostat behaviour",
+        "data": {
+          "off_behavior": "What does 'off' do?",
+          "setback_temp": "Setback temperature"
+        },
+        "data_description": {
+          "off_behavior": "Setback keeps the stove on with a low target, which saves ignitions. Power off really switches the stove off.",
+          "setback_temp": "Target temperature used when the thermostat is turned off in setback mode."
+        }
+      }
+    }
+  },
+  "selector": {
+    "off_behavior": {
+      "options": {
+        "setback": "Setback: lower target temperature",
+        "power": "Power off: switch the stove off"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "problem": { "name": "Fault" },
+      "week_program": { "name": "Stove week program" }
+    },
+    "sensor": {
+      "room_temperature": { "name": "Room temperature" },
+      "target_temperature": { "name": "Target temperature" },
+      "mode": { "name": "Status" },
+      "error": { "name": "Error code" },
+      "consumption": { "name": "Pellet consumption" },
+      "maintenance_in": { "name": "Maintenance in" },
+      "cleaning_in": { "name": "Cleaning in" },
+      "ignitions": { "name": "Ignitions" },
+      "on_time": { "name": "Operating hours" }
+    },
+    "switch": {
+      "power": { "name": "Main power" },
+      "eco_mode": { "name": "Eco mode" }
+    }
+  }
+}

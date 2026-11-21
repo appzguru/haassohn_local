@@ -1,0 +1,11 @@
+{
+  "domain": "haassohn_local",
+  "name": "Haas+Sohn pelletkachel (lokaal)",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/appzguru/haassohn_local",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}

@@ -1,0 +1,60 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Haas+Sohn pelletkachel",
+        "description": "Lokale verbinding met de Haas+Sohn wifimodule. IP-adres en app-PIN staan op de kachel onder WLAN status.",
+        "data": { "host": "IP-adres", "pin": "App-PIN" }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kachel niet bereikbaar op dit adres.",
+      "invalid_auth": "De kachel weigert de PIN."
+    },
+    "abort": { "already_configured": "Deze kachel is al toegevoegd." }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gedrag van de thermostaat",
+        "data": {
+          "off_behavior": "Wat doet 'uit'?",
+          "setback_temp": "Spaartemperatuur"
+        },
+        "data_description": {
+          "off_behavior": "Spaarstand houdt de kachel aan met een lage doeltemperatuur (spaart ontstekingen). Echt uit schakelt de kachel uit.",
+          "setback_temp": "Doeltemperatuur als de thermostaat in spaarstand 'uit' wordt gezet."
+        }
+      }
+    }
+  },
+  "selector": {
+    "off_behavior": {
+      "options": {
+        "setback": "Spaarstand: doeltemperatuur omlaag",
+        "power": "Echt uit: kachel uitschakelen"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "problem": { "name": "Storing" },
+      "week_program": { "name": "Weekprogramma kachel" }
+    },
+    "sensor": {
+      "room_temperature": { "name": "Kamertemperatuur" },
+      "target_temperature": { "name": "Doeltemperatuur" },
+      "mode": { "name": "Status" },
+      "error": { "name": "Foutcode" },
+      "consumption": { "name": "Pelletverbruik" },
+      "maintenance_in": { "name": "Onderhoud over" },
+      "cleaning_in": { "name": "Schoonmaken over" },
+      "ignitions": { "name": "Ontstekingen" },
+      "on_time": { "name": "Branduren" }
+    },
+    "switch": {
+      "power": { "name": "Hoofdschakelaar" },
+      "eco_mode": { "name": "Eco-modus" }
+    }
+  }
+}
